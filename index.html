@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Repairs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to AS Repair </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="About us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Desktop Repairs</li>
+                <li>Laptop Repairs</li>
+                <li>Parts Replacements</li>
+                <li>Tune-Ups</li>
+                <li>Troubleshooting</li>
+                <li>Software Installation</li>
+                <li>Data Recovery/Transfer</li>
+            </ul>
+        </section>
+        <section id="about">
+            <h2>How do we work?</h2>
+            <p>
+                <ol>
+                    <li>We get to know your problem in our free 30 minute Consultation</li>
+                    <li>Create paperwork entailing repair</li>
+                    <li>Schedule a device dropoff or pickup</li>
+                    <li>Order parts (if applicable) or start repairs</li>
+                    <li>Complimentary Diagnosis/tuneup with every repair</li>
+                    <li>Schedule a device dropoff or pickup to return the device to you</li>
+                    
+                </ol>
+            </p>
+                
+        </section>
+        <section id="contact">
+            <h2>Questions or Concerns?</h2>
+            
+            <form id="contact-form" action="https://formspree.io/f/xayrgkja" method="POST">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="contact-name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="contact-email" name="email" required>
+            
+                <label for="message">Leave us a Description of your issue here:</label>
+                <textarea id="contact-message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+               
+            </form>
+            </section>
+             
+                <!-- Calendly badge widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <script
+                    type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/aryanksheth/one-on-one-consultation', text: 'Schedule a free one on one!', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+                <!-- Calendly badge widget end -->
+    </main>
+    <footer>
+        <p>&copy; 2024 AS Repair. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

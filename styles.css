@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+ min-height: 400px;
+ margin-bottom: 100px;
+ clear: both;
+
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 0.5rem 0 0.2rem;
+}
+
+form input, form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  /* Remove default button styles */
+  background: wheat;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: inherit;
+  cursor: pointer;
+  /* Add rounded corners */
+  border-radius: 5px;
+  /* Add a light border on hover */
+  transition: border 0.3s ease;
+}
+
+button:hover {
+  border: 1px solid #f9f9f9;
+}
+#timeline {
+  /* Style the timeline container */
+}
+
+.timeline-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-item:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 100%;
+  background-color: #ddd;
+  position: absolute;
+  left: 5px;
+  top: 0;
+}
+
+.timeline-item:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #222;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-item-content {
+  padding: 10px 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  left: 25px;
+  top: 5px;
+}
