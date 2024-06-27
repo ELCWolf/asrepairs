@@ -35,7 +35,6 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 
     timelineItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Add toggle functionality here (change background color, display additional details etc.)
         });
     });
 
