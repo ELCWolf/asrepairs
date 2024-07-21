@@ -1,5 +1,0 @@
-```
-RewriteEngine On 
-RewriteCond %{SERVER_PORT} !=443 
-RewriteRule ^(.*)$ https://asrepairs.tech/$1 [R=301,L]
-```

@@ -21,7 +21,95 @@ body, html {
   max-width: 100%;
   height: auto;
 }
+.container {
+  position: relative;
+  width: 48%; /* Adjust width to fit two images side by side */
+  margin: 5px 0;
+  box-sizing: border-box;
+}
 
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 80%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+ @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+            }
+
+            .text {
+                font-size: 14px; /* Smaller font size on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text {
+                font-size: 12px; /* Further adjust font size on very small screens */
+                padding: 8px;
+            }
+        }
+ @media (max-width: 768px) {
+            .image-container .container {
+                flex: 1 1 100%; /* Stack images vertically on small screens */
+            }
+          }
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+.image-container img {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+}
+
+.image-container .text {
+    margin-top: 8px;
+}
+.container img {
+  width: 100%;
+  height: 700px;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.container:hover .image {
+  opacity: 0.3;
+}
+.container:hover .middle {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+            .container {
+                width: 100%; /* Make the containers full width on small screens */
+            }
+        }
+
+
+.text {
+  background-color: #4b696f;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 .w3-bar .w3-button {
   padding: 16px;
 }
@@ -56,14 +144,24 @@ section {
 }
 
 footer {
-  background-color: #333;
+  background-color: #000000;
   color: white;
   text-align: center;
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
+
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-sticky {
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
 
 form {
   display: flex;
@@ -83,7 +181,7 @@ form input, form textarea {
 
 button {
   /* Remove default button styles */
-  background: wheat;
+  background: rgb(98, 114, 128);
   color: black;
   border: none;
   padding: 10px 20px;
@@ -96,7 +194,7 @@ button {
 }
 
 button:hover {
-  border: 1px solid #f9f9f9;
+  border: 1px solid #3b4c5c;
 }
 
 
@@ -182,7 +280,7 @@ button:hover {
 second_button {
   /* Remove default button styles */
   background: black;
-  color: whitesmoke;
+  color: rgb(48, 64, 75);
   border: none;
   padding: 10px 20px;
   font-size: large;
