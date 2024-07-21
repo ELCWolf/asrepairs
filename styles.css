@@ -36,6 +36,50 @@ body, html {
   transition: .5s ease;
   backface-visibility: hidden;
 }
+/* Container for grid items */
+.grid-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 16px;
+}
+
+/* Individual grid items */
+.grid-item {
+    flex: 1;
+    margin: 0 8px;
+    position: relative;
+}
+
+/* Style for images and text overlay */
+
+
+.middle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.grid-item:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
  @media (max-width: 768px) {
             .container {
                 max-width: 100%;
