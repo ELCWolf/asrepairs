@@ -50,3 +50,8 @@ function menuOnClick() {
         nav.style.display = "flex";
     }
 }
+document.getElementById('deviceInfoForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Perform validation here
+    // Send form data to the server
+});

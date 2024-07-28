@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Repairs</title>
+    <link rel="stylesheet" href="triage.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/ASblue.png?">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/ASblue.png?">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .form-container {
+            padding-left: 200px;
+        }
+
+        .form-containerR {
+            padding-right: 200px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">ASRepairs</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT</a>
+                <a href="triage.html" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> CONSULTATION</a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div class="w3-container" style="padding:128px 16px" id="header"></div>
+
+    <div class="form-container">
+        <form id="deviceInfoForm" action="https://www.formbackend.com/f/b780378939c19837" method="POST"
+            style="float: left;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+
+            <label for="deviceInfo">Device Info:</label>
+            <select name="deviceInfo" id="deviceInfo" required>
+                <option value="Option">Choose an Option</option>
+                <option value="Windows">Windows Laptop</option>
+                <option value="Apple">Apple</option>
+                <option value="Other">Other</option>
+            </select><br>
+
+            <div id="companySelectDiv" class="hidden">
+                <label for="companySelect">Company:</label>
+                <select name="companySelect" id="companySelect">
+                    <option value="Option">Choose an Option</option>
+                    <option value="Dell">Dell</option>
+                    <option value="HP">HP</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Acer">Acer</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Microsoft">Microsoft</option>
+                </select>
+            </div>
+
+            <div id="additionalFields" class="hidden">
+                <label for="deviceModel">Device Model:</label>
+                <select name="deviceModel" id="deviceModel" class="hidden">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <input type="text" id="otherDeviceModel" name="otherDeviceModel" class="hidden"
+                    placeholder="Enter your device model">
+            </div>
+
+            <div id="otherCompanyDiv" class="hidden">
+                <label for="otherCompany">Other Company:</label>
+                <input type="text" id="otherCompany" name="otherCompany" placeholder="Enter company name">
+            </div>
+
+            <label for="imei">IMEI/SN:</label>
+            <input type="text" id="imei" name="imei" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <!-- Calendly inline widget begin -->
+    <style type="calendly-inline-widget">
+        .calendly-badge-widget {
+            right: 20px !important;
+            left: auto !important;
+        }
+    </style>
+    <div class="form-containerR">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/aryanksheth/3-consultation"
+            style="min-width:600px;height:600px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+    <!-- Calendly inline widget end -->
+    <script>
+        const deviceInfoSelect = document.getElementById('deviceInfo');
+        const companySelectDiv = document.getElementById('companySelectDiv');
+        const companySelect = document.getElementById('companySelect');
+        const additionalFieldsDiv = document.getElementById('additionalFields');
+        const deviceModelSelect = document.getElementById('deviceModel');
+        const otherDeviceModelInput = document.getElementById('otherDeviceModel');
+        const otherCompanyDiv = document.getElementById('otherCompanyDiv');
+
+        const windowsModels = {
+            Dell: ['XPS 13', 'XPS 15', 'Inspiron 15', 'Latitude 14'],
+            HP: ['Spectre x360', 'Envy 13', 'Pavilion 15', 'EliteBook 840'],
+            Lenovo: ['ThinkPad X1', 'Yoga 9i', 'IdeaPad 3', 'Legion 5'],
+            Acer: ['Aspire 5', 'Swift 3', 'Nitro 5', 'Predator Helios'],
+            Asus: ['ZenBook 14', 'ROG Zephyrus', 'VivoBook S15', 'TUF Gaming'],
+            Microsoft: ['Surface Laptop 4', 'Surface Pro 7', 'Surface Book 3', 'Surface Go 2']
+        };
+
+        const appleModels = ['MacBook Air M2', 'MacBook Pro 14', 'MacBook Pro 16', 'MacBook Pro 13'];
+
+        deviceInfoSelect.addEventListener('change', function () {
+            const selectedValue = deviceInfoSelect.value;
+
+            if (selectedValue === 'Windows') {
+                companySelectDiv.classList.remove('hidden');
+                otherCompanyDiv.classList.add('hidden');
+                additionalFieldsDiv.classList.add('hidden');
+            } else if (selectedValue === 'Apple') {
+                companySelectDiv.classList.add('hidden');
+                populateModels(appleModels);
+                additionalFieldsDiv.classList.remove('hidden');
+                otherDeviceModelInput.classList.add('hidden');
+                otherCompanyDiv.classList.add('hidden');
+                deviceModelSelect.classList.remove('hidden');
+            } else if (selectedValue === 'Other') {
+                companySelectDiv.classList.add('hidden');
+                additionalFieldsDiv.classList.remove('hidden');
+                deviceModelSelect.classList.add('hidden');
+                otherDeviceModelInput.classList.remove('hidden');
+                otherCompanyDiv.classList.remove('hidden');
+            } else {
+                additionalFieldsDiv.classList.add('hidden');
+                otherDeviceModelInput.classList.add('hidden');
+                otherCompanyDiv.classList.add('hidden');
+                companySelectDiv.classList.add('hidden');
+            }
+        });
+
+        companySelect.addEventListener('change', function () {
+            const selectedCompany = companySelect.value;
+            populateModels(windowsModels[selectedCompany]);
+            additionalFieldsDiv.classList.remove('hidden');
+            otherDeviceModelInput.classList.add('hidden');
+        });
+
+        deviceModelSelect.addEventListener('change', function () {
+            const selectedModel = deviceModelSelect.value;
+            if (selectedModel === 'Other') {
+                otherDeviceModelInput.classList.remove('hidden');
+            } else {
+                otherDeviceModelInput.classList.add('hidden');
+            }
+        });
+        function populateModels(models) {
+            deviceModelSelect.innerHTML = '';
+            models.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                deviceModelSelect.appendChild(option);
+            });
+            if (models.length > 0) {
+                deviceModelSelect.classList.remove('hidden');
+            } else {
+                deviceModelSelect.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>
