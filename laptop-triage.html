@@ -54,14 +54,7 @@
     <div class="form-container">
         <form id="deviceInfoForm" action="https://www.formbackend.com/f/b780378939c19837" method="POST"
             style="float: left;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+           
 
             <label for="deviceInfo">Device Info:</label>
             <select name="deviceInfo" id="deviceInfo" required>
@@ -104,19 +97,10 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-    <!-- Calendly inline widget begin -->
-    <style type="calendly-inline-widget">
-        .calendly-badge-widget {
-            right: 20px !important;
-            left: auto !important;
-        }
-    </style>
-    <div class="form-containerR">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/aryanksheth/3-consultation"
-            style="min-width:600px;height:600px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    </div>
-    <!-- Calendly inline widget end -->
+    <!-- AI Agent Begin -->
+    <script src="widget.js"></script>
+
+    <!-- AI Agent End -->
     <script>
         const deviceInfoSelect = document.getElementById('deviceInfo');
         const companySelectDiv = document.getElementById('companySelectDiv');
